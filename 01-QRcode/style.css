@@ -1,3 +1,79 @@
+/*Reset*/
 body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: hsl(212, 45%, 89%);
+}
+/* html {
+    font-size: 62.8%;
+} */
+
+/*Globals*/
+a {
+    text-decoration: none;
+}
+/*Container*/
+.container {
     
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/*Card*/
+.card {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5%;
+    width: 17%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    /* border: 2px solid black; */
+    padding: 15px;
+}
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+footer {
+    align-self: end;
+}
+.content {
+    text-align: center;
+}
+.span {
+    margin-bottom: 50px;
+}
+.title {
+    margin: 10px 0;
+    padding: 2px;
+}
+.main_title {
+    font-size: 1.6rem;
+   font-family: 'Outfit', sans-serif;
+   font-weight: 700;
+   color: hsl(218, 44%, 22%);
+}
+.info {
+    margin: 10px 0;
+    padding: 2px;
+}
+.sub_title {
+    font-size: 1.1rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    color: hsl(220, 15%, 55%);
+}
+footer {
+    text-align: center;
+}
+.attribution {
+    margin-bottom: 20px;
 }
