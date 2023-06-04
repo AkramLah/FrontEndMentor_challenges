@@ -1,11 +1,11 @@
 :root {
-    --color-primary-400:hsl(158, 36%, 37%);
-    --color-hover-500:hsl(179, 36%, 37%);
-    --color-secondary-200: hsl(30, 38%, 92%);
+    --color-primary:hsl(158, 36%, 37%);
+    --color-hover:hsl(158, 87%, 9%);
+    --color-secondary: hsl(30, 38%, 92%);
 
-    --color-neutral-900 :hsl(212, 21%, 14%);
-    --color-neutral-400 :hsl(228, 12%, 48%);
-    --color-neutral-100 :hsl(0, 0%, 100%);
+    --color-neutral-dark :hsl(212, 21%, 14%);
+    --color-neutral-medium :hsl(228, 12%, 48%);
+    --color-neutral-light :hsl(0, 0%, 100%);
 
     --ff-mons: 'Montserrat', sans-serif;
     --ff-weird: 'Fraunces', serif;
@@ -68,18 +68,18 @@
     font-family: var(--ff-mons);
     font-weight: var(--fontw-regular);
     font-size: 0.875rem;
-    color: var(--color-neutral-400);
-    /*don't forget to change the body background to te required color*/
-    background-color: var(--color-neutral-400);
+    color: var(--color-neutral-medium);
+    /*the body background to te required color make it hard to see the card*/
+    background-color: var(--color-neutral-medium);
     /*To check later after learning more about drig layout*/
     display: grid;
     place-content: center;
     margin: 1rem;
   }
-  h1,h2,h3 {
+  h1 {
     line-height: 1;
   }
-  /*utilities*/
+  /*Core styling*/
   .flex-group {
     display: flex;
     flex-wrap: wrap;
@@ -88,12 +88,40 @@
   }
   /*Product*/
   .product {
+    max-width: 37.5rem;
+    display: grid;
+    /*Setting variables for a better control on 
+    the spacing/padding of the component*/
     --content-padding : 1.6rem;
     --content-spacing : 1rem;
-    background-color: var(--color-neutral-100);
+    background-color: var(--color-neutral-light);
     border-radius:0.6rem;
     overflow: hidden;
   }
+   /*
+  Media queries for desktop version
+  */
+  @media screen and (min-width: 36rem) {
+    .product {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+      /*Not convinced ,both grid and flex box on the 
+    .product class on the media query created a white space under the img*/
+
+    /* .product {
+      display: flex;  
+      
+    }
+    .product__img {
+      flex-grow: 1;
+}
+    .product__content {
+      flex-grow: 1;
+} */
+  }
+
+
   .product__content {
     padding: var(--content-padding);
     display: grid;
@@ -109,12 +137,12 @@
     font-size: 2rem;
     font-weight: var(--fontw-bold);
     font-family: var(--ff-weird);
-    color: var(--color-neutral-900);
+    color: var(--color-neutral-dark);
   }
   .product__price {
     font-size: 2rem;
     font-family: var(--ff-weird);
-    color: var(--color-primary-400);
+    color: var(--color-primary);
     font-weight: var(--fontw-bold);
   }
   .button {
@@ -122,18 +150,19 @@
     font-size: 1rem;
     font-family: var(--ff-mons);
     cursor: pointer;
-    color: var(--color-neutral-100);
-    background-color: var(--color-primary-400);
+    color: var(--color-neutral-light);
+    background-color: var(--color-primary);
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
     border: none;/*none or 0 look it up*/
-    display: inline-flex;
-    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 0.6rem;
   }
   .button:is(:hover, :focus) {
-    background-color: var(--color-hover-500);
+    background-color: var(--color-hover);
   }
   .button[data-icon="Shopping-Cart"]::before {
 content: '';
@@ -141,4 +170,6 @@ width: 15px;
 height: 16px;
 background-image: url(images/icon-cart.svg);
   }
+ 
 
+ 
